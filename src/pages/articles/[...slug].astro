@@ -1,0 +1,88 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import { getEntry } from "astro:content";
+import { formatDate } from "../../utils";
+import Tags from "../../components/Tags.astro";
+
+//--Alt-1:
+// import { getCollection } from "astro:content";
+// import type { CollectionEntry } from "astro:content";
+
+// export async function getStaticPaths() {
+//   const allBlogArticles: CollectionEntry<"blog">[] =
+//     await getCollection("blog");
+
+//   return allBlogArticles.map((article) => ({
+//     params: { slug: article.slug },
+//     props: { article },
+//   }));
+// }
+// const { article } = Astro.props;
+// console.log(article);
+
+//--Alt-2: 'output' = 'Server'
+
+const { slug } = Astro.params;
+
+if (slug === undefined) {
+  console.log("--Slug is undefined");
+  return Astro.redirect("/404");
+}
+
+const article = await getEntry("blog", slug);
+console.log(article);
+if (article === undefined) {
+  console.log("--Article is undefined");
+  return Astro.redirect("/404");
+}
+//--To render Markdown doc to HTML:
+const { Content } = await article.render();
+---
+
+<MainLayout pageTitle={"article.data.title"}>
+  <a
+    href="/articles"
+    class="inline-block bg-gray-100 p-2 mb-6 hover:bg-indigo-500 hover:text-white"
+    >Back To Articles</a
+  >
+  <article>
+    <h1 class="text-4xl font-bold mb-2">
+      {article.data.title}
+    </h1>
+    <h3 class="text-lg mb-2">
+      Written by {article.data.author} on {formatDate(article.data.pubDate)}
+    </h3>
+    <div class="flex flex-wrap gap-2 my-6">
+      <Tags tags={article.data.tags} />
+      <!-- {
+        article.data.tags.map((tag, idx) => (
+          <span
+            class={
+              idx % 2 === 0
+                ? "px-2 py-1 bg-green-500 text-white rounded-full text-xs hover:opacity-90"
+                : "px-2 py-1 bg-indigo-500 text-white rounded-full text-xs hover:opacity-90"
+            }
+          >
+            <a href={"/articles/tag/" + tag}>{tag}</a>
+          </span>
+        ))
+      } -->
+    </div>
+    <img
+      src={"/images/" + article.data.image}
+      alt="Article Image"
+      class="w-full h-auto rounded-xl mb-6"
+    />
+    <Content />
+  </article>
+</MainLayout>
+
+<style is:global>
+  p {
+    margin: 20px 0;
+  }
+  h2 {
+    margin: 20px 0;
+    font-size: 1.5em;
+  }
+</style>

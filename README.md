@@ -1,47 +1,32 @@
-# Astro Starter Kit: Minimal
+# Project : Build SSR Blog
+***************************************************************
+AstroJS: Build SSR Blog -- By Traversy Media
 
-```sh
-npm create astro@latest -- --template minimal
-```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## Notes:
+- Started at: Week-4 of Nov24
+- Machine: Astro v.4.7.0
+- Web Deploy: vercel.com
+- Packages: Tailwind, Typescript
+- Backend: NA
+- DB: NA
+- API: NA
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## References:
+- [Ytb: Astro Quick Start Course ... - By Traversy Media](https://www.youtube.com/watch?v=XoIHKO6AkoM&t=8s)
+- [Github: bradtraversy/astro-blog](https://github.com/bradtraversy/astro-blog)
 
-## 🚀 Project Structure
+- Random Images: [https://i.pravatar.cc/200](https://i.pravatar.cc/200)
+- Random Images: [https://picsum.photos/200](https://picsum.photos/200)
+- Unsplash Images: https://source.unsplash.com/[IMAGE ID]
+- Color Ref: [Colors](https://coolors.co/palettes/trending)
+- Svg Icon Collection: [SVG Icons](http://svgrepo.com)
+- Github Emoji Collection (for Markdown): [Emoji](https://github.com/ikatyang/emoji-cheat-sheet)
+- Emoji Collection (for HTML): [Emoji](https://html-css-js.com/html/character-codes/)
+- Docs and Diagrams platform for engineering teams: [Eraser.App](https://app.eraser.io/)
+- Markdown Editor: [Markdown Editor](https://pandao.github.io/editor.md/index.html)
+- Markdown to HTML: [Markdown to HTML](https://markdowntohtml.com)
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Snapshot:
+![Asto-SSR-Blog](public/images/snapshot/astro-ssr-blog.jpg)
+<hr>
